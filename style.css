@@ -1,0 +1,115 @@
+/* Thiết lập cơ bản */
+html {
+    height: 100%;
+}
+
+body {
+    margin: 0;
+    font-family: Arial, sans-serif;
+    background-color: #f4f4f4;
+    padding-top: 70px; /* Bù khoảng trống do Header dùng position: fixed thoát khỏi luồng tài liệu */
+    min-height: 1500px; /* Đảm bảo trang có đủ độ dài để kiểm thử thanh cuộn */
+    box-sizing: border-box;
+}
+
+/* Header cố định (position: fixed) */
+.main-header {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    background-color: #333333;
+    color: #ffffff;
+    padding: 15px 20px;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.2);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    z-index: 1000; /* Đảm bảo Header luôn nằm trên cùng khi cuộn nội dung */
+    box-sizing: border-box;
+}
+
+.main-header h1 {
+    margin: 0;
+    font-size: 24px;
+}
+
+.main-header nav ul {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    display: flex;
+}
+
+.main-header nav ul li {
+    margin-left: 20px;
+}
+
+.main-header nav ul li a {
+    color: #ffffff;
+    text-decoration: none;
+    font-weight: bold;
+}
+
+.main-header nav ul li a:hover {
+    color: #00bcd4;
+}
+
+/* Container chính sử dụng Flexbox cho 3 cột */
+.page-container {
+    display: flex;
+    justify-content: space-between;
+    margin: 20px;
+    gap: 20px;
+}
+
+/* Style chung cho Sidebar */
+.sidebar {
+    background-color: #ffffff;
+    padding: 15px;
+    border-radius: 5px;
+    box-shadow: 0 1px 3px rgba(0,0,0,0.1);
+    flex-shrink: 0; /* Ngăn sidebar bị co lại */
+}
+
+.left-sidebar {
+    width: 200px;
+}
+
+.right-sidebar {
+    width: 200px;
+}
+
+.sidebar h3 {
+    margin-top: 0;
+    color: #333333;
+}
+
+.sidebar ul {
+    list-style: none;
+    padding: 0;
+}
+
+.sidebar ul li {
+    margin-bottom: 10px;
+    color: #555555;
+}
+
+/* Style cho Nội dung chính */
+.main-content {
+    background-color: #ffffff;
+    padding: 20px;
+    border-radius: 5px;
+    box-shadow: 0 1px 3px rgba(0,0,0,0.1);
+    flex-grow: 1; /* Chiếm toàn bộ phần không gian còn lại ở giữa */
+}
+
+.main-content h2 {
+    margin-top: 0;
+    color: #222222;
+}
+
+.main-content p {
+    line-height: 1.6;
+    color: #444444;
+}
